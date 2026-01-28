@@ -1,6 +1,6 @@
 package br.com.student.portal.validation;
 
-import br.com.student.portal.entity.TaskEntity;
+import br.com.student.portal.entity.Task;
 import br.com.student.portal.exception.BadRequestException;
 import org.springframework.stereotype.Component;
 
@@ -43,11 +43,11 @@ public class TaskValidator {
         }
     }
 
-    public static void validateTaskFields(TaskEntity taskEntity) {
-        validateName(taskEntity.getName());
-        validateDeadLine(taskEntity.getDeadline());
-        validateDescription(taskEntity.getDescription());
-        validateTitle(taskEntity.getTitle());
-        validateCourse(taskEntity.getCourse());
+    public static void validateTaskFields(Task task) {
+        validateName(task.getName());
+        validateDeadLine(task.getDeadline());
+        validateDescription(task.getDescription());
+        validateTitle(task.getTitle());
+        validateCourse(task.getCourse());
     }
 }

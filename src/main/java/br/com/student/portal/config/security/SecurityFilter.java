@@ -1,6 +1,7 @@
 package br.com.student.portal.config.security;
 
 import br.com.student.portal.repository.UserRepository;
+import br.com.student.portal.service.auth.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

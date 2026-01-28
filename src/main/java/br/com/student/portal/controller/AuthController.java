@@ -1,8 +1,8 @@
 package br.com.student.portal.controller;
 
-import br.com.student.portal.dto.user.UserRequest;
-import br.com.student.portal.dto.user.UserResponse;
-import br.com.student.portal.service.AuthService;
+import br.com.student.portal.dto.request.UserRequest;
+import br.com.student.portal.dto.response.UserResponse;
+import br.com.student.portal.service.auth.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
 package br.com.student.portal.controller;
 
 import br.com.student.portal.entity.Payment;
-import br.com.student.portal.service.PaymentService;
+import br.com.student.portal.service.payment.PaymentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,9 +1,9 @@
 package br.com.student.portal.controller;
 
-import br.com.student.portal.dto.material.MaterialRequest;
-import br.com.student.portal.dto.material.MaterialResponse;
-import br.com.student.portal.entity.UserEntity;
-import br.com.student.portal.service.MaterialService;
+import br.com.student.portal.dto.request.MaterialRequest;
+import br.com.student.portal.dto.response.MaterialResponse;
+import br.com.student.portal.entity.User;
+import br.com.student.portal.service.material.MaterialService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +37,7 @@ public class MaterialController {
                 .category(category)
                 .build();
 
-        var uploadedBy = (UserEntity) authentication.getPrincipal();
+        var uploadedBy = (User) authentication.getPrincipal();
         var response = materialService.createMaterial(request, file, uploadedBy);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -85,7 +85,7 @@ public class MaterialController {
             @RequestBody MaterialRequest request,
             Authentication authentication) {
 
-        var uploadedBy = (UserEntity) authentication.getPrincipal();
+        var uploadedBy = (User) authentication.getPrincipal();
         var response = materialService.updateMaterial(id, request, uploadedBy);
         return ResponseEntity.ok(response);
     }
@@ -95,7 +95,7 @@ public class MaterialController {
             @PathVariable UUID id,
             Authentication authentication) {
 
-        var uploadedBy = (UserEntity) authentication.getPrincipal();
+        var uploadedBy = (User) authentication.getPrincipal();
         materialService.deleteMaterial(id, uploadedBy);
         return ResponseEntity.noContent().build();
     }

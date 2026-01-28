@@ -1,7 +1,7 @@
 package br.com.student.portal.controller;
 
-import br.com.student.portal.entity.TaskEntity;
-import br.com.student.portal.service.TaskService;
+import br.com.student.portal.entity.Task;
+import br.com.student.portal.service.task.TaskService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +20,13 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<TaskEntity>> findTaskById(@PathVariable UUID id) {
+    public ResponseEntity<Optional<Task>> findTaskById(@PathVariable UUID id) {
         return ResponseEntity.status(FOUND).body(taskService.findTaskById(id));
     }
 
     @PostMapping("/create")
-    public ResponseEntity<TaskEntity> createTask(@RequestBody TaskEntity taskEntity) {
-        return ResponseEntity.status(CREATED).body(taskService.createTask(taskEntity));
+    public ResponseEntity<Task> createTask(@RequestBody Task task) {
+        return ResponseEntity.status(CREATED).body(taskService.createTask(task));
     }
 
     @DeleteMapping("/{id}")

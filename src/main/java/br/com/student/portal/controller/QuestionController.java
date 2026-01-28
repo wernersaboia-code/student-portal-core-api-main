@@ -1,8 +1,8 @@
 package br.com.student.portal.controller;
 
-import br.com.student.portal.dto.question.QuestionRequest;
-import br.com.student.portal.dto.question.QuestionResponse;
-import br.com.student.portal.service.QuestionService;
+import br.com.student.portal.dto.request.QuestionRequest;
+import br.com.student.portal.dto.response.QuestionResponse;
+import br.com.student.portal.service.question.QuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

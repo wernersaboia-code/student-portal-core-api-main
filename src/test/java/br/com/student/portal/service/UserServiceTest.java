@@ -1,11 +1,12 @@
 package br.com.student.portal.service;
 
-import br.com.student.portal.dto.user.UserRequest;
-import br.com.student.portal.dto.user.UserResponse;
+import br.com.student.portal.dto.request.UserRequest;
+import br.com.student.portal.dto.response.UserResponse;
 import br.com.student.portal.entity.UserEntity;
 import br.com.student.portal.exception.ObjectNotFoundException;
 import br.com.student.portal.mapper.UserMapper;
 import br.com.student.portal.repository.UserRepository;
+import br.com.student.portal.service.user.UserService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import static br.com.student.portal.data.FixedData.superUser;
 import static org.assertj.core.api.BDDAssertions.thenThrownBy;
